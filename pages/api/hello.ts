@@ -5,6 +5,7 @@ type Data = {
 };
 
 console.log('test');
+console.log('new code');
 
 export default function handler(
   req: NextApiRequest,
