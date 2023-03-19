@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import NavBar from '../components/navbar';
+import NavBar from '../navbar';
 import '@testing-library/jest-dom';
 
 describe('NavBar', () => {
@@ -29,16 +29,6 @@ describe('NavBar', () => {
     render(<NavBar />);
 
     const hamburgerMenu = screen.getByTestId('navbar-hamburger-menu');
-
-    expect(hamburgerMenu).not.toBeVisible();
-  });
-
-  it('contains a hidden hamburger menu', () => {
-    render(<NavBar />);
-
-    const hamburgerMenu = screen.getByTestId('navbar-hamburger-menu', {
-      hidden: true,
-    });
 
     expect(hamburgerMenu).not.toBeVisible();
   });
