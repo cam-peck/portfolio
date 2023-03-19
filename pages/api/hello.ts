@@ -4,8 +4,6 @@ type Data = {
   name: string;
 };
 
-console.log('test');
-
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
