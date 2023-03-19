@@ -37,3 +37,8 @@ next-env.d.ts
 
 #vscode config
 .vscode
+
+#testing
+coverage
+reports
+.swc
