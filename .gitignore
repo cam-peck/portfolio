@@ -39,7 +39,6 @@ next-env.d.ts
 .vscode
 
 #testing
-cypress
 coverage
 reports
 .swc
