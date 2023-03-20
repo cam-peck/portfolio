@@ -18,11 +18,11 @@ export default function HamburgerMenu(props: HamburgerMenuProps) {
     <section>
       <div onClick={() => setHamburgerIsOpen(!hamburgerIsOpen)} className={`space-y-2 py-4 hover:cursor-pointer`}>
         {/* Top Bar*/}
-        <span className={hamburgerIsOpen ? topHamburger : topCloseIcon}></span>
+        <span className={hamburgerIsOpen ? topCloseIcon : topHamburger}></span>
         {/* Middle Bar */}
-        <span className={hamburgerIsOpen ? middleHamburger : middleCloseIcon}></span>
+        <span className={hamburgerIsOpen ? middleCloseIcon : middleHamburger}></span>
         {/* Bottom Bar*/}
-        <span className={hamburgerIsOpen ? bottomHamburger : bottomCloseIcon}></span>
+        <span className={hamburgerIsOpen ? bottomCloseIcon : bottomHamburger}></span>
       </div>
     </section>
   );

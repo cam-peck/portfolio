@@ -6,7 +6,7 @@ module.exports = {
     colors: {
       ghostwhite: '#F4F4F9',
       lightblue: '#B8DBD9',
-      paynesgray: '586F7C',
+      paynesgray: '#586F7C',
       charcoal: '#2F4550',
       black: '#000000',
       'success-green': '#28A745',
@@ -15,6 +15,7 @@ module.exports = {
       coral: '#FF8691',
       lightpurple: '#A259FE',
       lightgray: '#9ca3af',
+      darkgray: '#111827',
     },
   },
   plugins: [],
