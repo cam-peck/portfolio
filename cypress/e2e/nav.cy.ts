@@ -21,7 +21,7 @@ describe('Navigation', () => {
     cy.get('a[href*="projects"]').click();
 
     // The new url should include "/projects"
-    cy.url().should('include', '/about');
+    cy.url().should('include', '/projects');
   });
 
   it('should navigate to the contact page', () => {
@@ -32,7 +32,7 @@ describe('Navigation', () => {
     cy.get('a[href*="contact"]').click();
 
     // The new url should include "/contact"
-    cy.url().should('include', '/about');
+    cy.url().should('include', '/contact');
   });
 
   it('should navigate back to the home page', () => {
@@ -46,7 +46,7 @@ describe('Navigation', () => {
     cy.url().should('include', '/about');
 
     // Find a link with the attribute containing "home" and click it
-    cy.get('a[href*="home"]').click();
+    cy.get('a[id*="home"]').click();
 
     // The new url should include "/"
     cy.url().should('include', '/');
