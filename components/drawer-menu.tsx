@@ -1,4 +1,5 @@
 import NavItems from './navitems';
+import Image from 'next/image';
 
 interface DrawerMenuProps {
   hamburgerIsOpen: boolean;
@@ -14,13 +15,13 @@ export default function DrawerMenu(props: DrawerMenuProps) {
   return (
     <section className={hamburgerIsOpen ? openMenu : closedMenu}>
       <div className="flex items-center h-[70px] pl-5 bg-black">
-        <h1 className="text-xl x2s:text-2xl text-white">CP</h1>
+        <Image src="/logo.png" width={50} height={10} alt="navbar-emblem" />
       </div>
       <div
         onClick={() => {
           setHamburgerIsOpen(false);
         }}
-        className="flex flex-col pb-4 gap-1 m-2"
+        className="flex flex-col m-2"
       >
         <NavItems hamburgerIsOpen={true} />
       </div>

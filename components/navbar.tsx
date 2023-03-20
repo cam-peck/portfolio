@@ -2,6 +2,7 @@ import { useState } from 'react';
 import NavItems from './navitems';
 import HamburgerMenu from './hamburger-menu';
 import DrawerMenu from './drawer-menu';
+import Image from 'next/image';
 
 export default function NavBar() {
   const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
@@ -21,8 +22,7 @@ export default function NavBar() {
     <header className="w-full bg-black text-ghostwhite">
       <nav className="max-w-6xl px-6 mx-auto flex items-center justify-between">
         <div className="flex gap-3 items-center">
-          {/* <img /> logo will go here instead of h1!*/}
-          <h1 className="text-white text-xl x2s:text-2xl">CP</h1>
+          <Image src="/logo.png" width={50} height={10} alt="navbar-emblem" />
         </div>
         <div className="hidden md:flex">
           <NavItems hamburgerIsOpen={false} />
