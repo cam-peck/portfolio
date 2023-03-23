@@ -29,14 +29,14 @@ describe('Home', () => {
   it('renders 8 coding language & framework images', () => {
     render(<Home />);
 
-    const reactImage = screen.getByAltText('react-image');
-    const nodeImage = screen.getByAltText('node-image');
-    const nextImage = screen.getByAltText('nextjs-image');
-    const awsImage = screen.getByAltText('aws-image');
-    const tailwindImage = screen.getByAltText('tailwindcss-image');
-    const postgresImage = screen.getByAltText('postgres-image');
-    const rtlImage = screen.getByAltText('rtl-image');
-    const jestImage = screen.getByAltText('jest-image');
+    const reactImage = screen.getByAltText('react-icon');
+    const nodeImage = screen.getByAltText('node-icon');
+    const nextImage = screen.getByAltText('nextjs-icon');
+    const awsImage = screen.getByAltText('aws-icon');
+    const tailwindImage = screen.getByAltText('tailwindcss-icon');
+    const postgresImage = screen.getByAltText('postgres-icon');
+    const rtlImage = screen.getByAltText('rtl-icon');
+    const jestImage = screen.getByAltText('jest-icon');
 
     expect(reactImage).toBeInTheDocument();
     expect(nodeImage).toBeInTheDocument();
@@ -52,7 +52,7 @@ describe('Home', () => {
     render(<Home />);
 
     const bioContent = screen.getByText(
-      "I create software for the web. I'm a full stack developer currently reading The Wheel of Time series. I'm currently learning Next.js and Chopin. Chopin is more difficult.",
+      /I create software for the web. I&apos;m a full stack developer currently learning Next.js and Cypress -- I&apos;m really into testing; GitHub actions are a lifesaver. I&apos;m also reading Eloquent JavaScript and The Great Hunt. They have a surprising amount of things in common./,
     );
 
     expect(bioContent).toBeInTheDocument();

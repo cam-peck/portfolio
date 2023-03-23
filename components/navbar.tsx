@@ -27,7 +27,7 @@ export default function NavBar() {
         <div className="hidden md:flex">
           <NavItems hamburgerIsOpen={false} />
         </div>
-        <div className="md:hidden pt-2 pb-2">
+        <div className="md:hidden pt-2 pb-2" data-testid="navbar-hamburger-menu">
           <HamburgerMenu hamburgerIsOpen={hamburgerIsOpen} setHamburgerIsOpen={setHamburgerIsOpen} />
         </div>
         <DrawerMenu hamburgerIsOpen={hamburgerIsOpen} setHamburgerIsOpen={setHamburgerIsOpen} />
