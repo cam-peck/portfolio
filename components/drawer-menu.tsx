@@ -1,6 +1,3 @@
-import NavItems from './navitems';
-import Image from 'next/image';
-
 interface DrawerMenuProps {
   hamburgerIsOpen: boolean;
   setHamburgerIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -15,16 +12,14 @@ export default function DrawerMenu(props: DrawerMenuProps) {
   return (
     <section className={hamburgerIsOpen ? openMenu : closedMenu}>
       <div className="flex items-center h-[70px] pl-5 bg-black">
-        <Image src="/logo.png" width={50} height={10} alt="navbar-emblem" />
+        <h1 className="font-bold text-xl">C. Peck</h1>
       </div>
       <div
         onClick={() => {
           setHamburgerIsOpen(false);
         }}
         className="flex flex-col m-2"
-      >
-        <NavItems hamburgerIsOpen={true} />
-      </div>
+      ></div>
     </section>
   );
 }

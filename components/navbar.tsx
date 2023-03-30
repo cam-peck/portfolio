@@ -24,8 +24,8 @@ export default function NavBar() {
           <h1 className="md:hidden text-white font-bold text-[24px]">CP</h1>
           <h1 className="hidden md:block text-white font-bold text-[24px]">CAMERON PECK</h1>
         </div>
-        <div className="hidden md:flex">
-          <NavItems hamburgerIsOpen={false} />
+        <div className="flex">
+          <NavItems hamburgerIsOpen={hamburgerIsOpen} setHamburgerIsOpen={setHamburgerIsOpen} />
         </div>
         <div className="md:hidden pt-2 pb-2" data-testid="navbar-hamburger-menu">
           <HamburgerMenu hamburgerIsOpen={hamburgerIsOpen} setHamburgerIsOpen={setHamburgerIsOpen} />
