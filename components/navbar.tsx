@@ -2,7 +2,6 @@ import { useState } from 'react';
 import NavItems from './navitems';
 import HamburgerMenu from './hamburger-menu';
 import DrawerMenu from './drawer-menu';
-import Image from 'next/image';
 
 export default function NavBar() {
   const [hamburgerIsOpen, setHamburgerIsOpen] = useState(false);
@@ -20,9 +19,10 @@ export default function NavBar() {
 
   return (
     <header className="w-full bg-black text-ghostwhite">
-      <nav className="max-w-6xl px-6 mx-auto flex items-center justify-between">
+      <nav className="px-6 mx-auto flex items-center justify-between">
         <div className="flex gap-3 items-center">
-          <h1 className="text-white font-bold text-[24px]">CP</h1>
+          <h1 className="md:hidden text-white font-bold text-[24px]">CP</h1>
+          <h1 className="hidden md:block text-white font-bold text-[24px]">CAMERON PECK</h1>
         </div>
         <div className="hidden md:flex">
           <NavItems hamburgerIsOpen={false} />
