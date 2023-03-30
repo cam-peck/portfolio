@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -16,13 +17,17 @@ export default function Home() {
               Howdy! I&apos;m Cameron Peck, a Software Developer based in Indianapolis. E2E testing is my passion.
             </p>
           </div>
-          <div className="flex gap-6 justify-center mdlg:justify-start items-center">
-            <div className="pt-1">
-              <Image src="/icons/github.png" alt="github-icon" width={90} height={50} />
-            </div>
-            <div>
-              <Image src="/icons/linkedin.png" alt="github-icon" width={90} height={50} />
-            </div>
+          <div className="flex justify-center mdlg:justify-start items-center">
+            <Link href="https://github.com/cam-peck" target="_blank">
+              <div className="mt-[2px] hover:bg-darkgray hover:bg-opacity-10 pr-3 py-1.5">
+                <Image src="/icons/github.png" alt="github-icon" width={90} height={50} />
+              </div>
+            </Link>
+            <Link href="https://www.linkedin.com/in/cameronjpeck/" target="_blank">
+              <div className="px-3 py-3 hover:bg-darkgray hover:bg-opacity-10">
+                <Image src="/icons/linkedin.png" alt="github-icon" width={90} height={50} />
+              </div>
+            </Link>
           </div>
         </div>
       </div>
