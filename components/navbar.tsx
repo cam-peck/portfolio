@@ -22,7 +22,7 @@ export default function NavBar() {
     <header className="w-full bg-black text-ghostwhite">
       <nav className="max-w-6xl px-6 mx-auto flex items-center justify-between">
         <div className="flex gap-3 items-center">
-          <Image src="/logo.png" width={50} height={10} alt="navbar-emblem" />
+          <h1 className="text-white font-bold text-[24px]">CP</h1>
         </div>
         <div className="hidden md:flex">
           <NavItems hamburgerIsOpen={false} />
