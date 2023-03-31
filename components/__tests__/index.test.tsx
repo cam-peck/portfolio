@@ -6,14 +6,8 @@ describe('Home', () => {
   it('renders a main and sub heading', () => {
     render(<Home />);
 
-    const mainHeading = screen.getByRole('heading', {
-      name: /Welcome!/i,
-    });
-
-    const subHeading = screen.getByRole('heading', {
-      name: /I'm Cameron./i,
-    });
-
+    const mainHeading = screen.getByTestId('main-header');
+    const subHeading = screen.getByTestId('sub-header');
     expect(mainHeading).toBeInTheDocument();
     expect(subHeading).toBeInTheDocument();
   });
@@ -22,7 +16,6 @@ describe('Home', () => {
     render(<Home />);
 
     const profileImage = screen.getByAltText('profile-image');
-
     expect(profileImage).toBeInTheDocument();
   });
 
@@ -48,13 +41,13 @@ describe('Home', () => {
     expect(jestImage).toBeInTheDocument();
   });
 
-  it('renders the short bio content', () => {
+  it('renders two clickable links for GitHub and LinkedIn', () => {
     render(<Home />);
 
-    const bioContent = screen.getByText(
-      /I create software for the web. I&apos;m a full stack developer currently learning Next.js and Cypress -- I&apos;m really into testing; GitHub actions are a lifesaver. I&apos;m also reading Eloquent JavaScript and The Great Hunt. They have a surprising amount of things in common./,
-    );
+    const gitHubLink = screen.getByRole('link', { name: 'github-icon' });
+    const linkedInLink = screen.getByRole('link', { name: 'linkedin-icon' });
 
-    expect(bioContent).toBeInTheDocument();
+    expect(gitHubLink).toBeInTheDocument();
+    expect(linkedInLink).toBeInTheDocument();
   });
 });

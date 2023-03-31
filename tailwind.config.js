@@ -17,6 +17,28 @@ module.exports = {
       lightgray: '#9ca3af',
       darkgray: '#111827',
     },
+    screens: {
+      sm: '640px',
+      // => @media (min-width: 640px) { ... }
+
+      md: '768px',
+      // => @media (min-width: 768px) { ... }
+
+      mdlg: '875px',
+      // => @media (min-width: 875px) { ... }
+
+      lg: '1024px',
+      // => @media (min-width: 1024px) { ... }
+
+      techstack: '1140px',
+      // => @media (min-width: 1140px) { ... }
+
+      xl: '1280px',
+      // => @media (min-width: 1280px) { ... }
+
+      '2xl': '1536px',
+      // => @media (min-width: 1536px) { ... }
+    },
   },
   plugins: [],
 };
