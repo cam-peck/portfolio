@@ -16,7 +16,11 @@ export default function HamburgerMenu(props: HamburgerMenuProps) {
   const bottomCloseIcon = 'block h-0.5 w-8 bg-ghostwhite -rotate-45 -translate-y-2 transition-all duration-500 ease-in-out';
   return (
     <section>
-      <div id="hamburger-menu" onClick={() => setHamburgerIsOpen(!hamburgerIsOpen)} className={`space-y-2 py-4 hover:cursor-pointer`}>
+      <div
+        data-testid="hamburger-menu"
+        onClick={() => setHamburgerIsOpen(!hamburgerIsOpen)}
+        className="space-y-2 py-4 hover:cursor-pointer"
+      >
         {/* Top Bar*/}
         <span className={hamburgerIsOpen ? topCloseIcon : topHamburger}></span>
         {/* Middle Bar */}
