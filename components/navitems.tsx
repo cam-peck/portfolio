@@ -22,7 +22,7 @@ export default function NavItems(props: NavItemsProps) {
   };
 
   return (
-    <div onClick={(event) => handleClick(event)} className={hamburgerIsOpen ? drawerNav : regularNav}>
+    <div data-testid="nav-items" onClick={(event) => handleClick(event)} className={hamburgerIsOpen ? drawerNav : regularNav}>
       <Link className={hamburgerIsOpen ? drawerLink : regularLink} id="home" href="/">
         Home
       </Link>
