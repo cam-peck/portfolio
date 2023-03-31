@@ -64,7 +64,7 @@ describe('Drawer Navigation', () => {
     // should start from the index (home) page //
     cy.visit('http://localhost:3000/');
 
-    cy.get('[id=hamburger-menu]').click();
+    cy.get('[data-testid=hamburger-menu]').click();
 
     // Find a link with the attribute containing "about" and click it
     cy.get('a[href*="about"]').click();
@@ -77,7 +77,7 @@ describe('Drawer Navigation', () => {
     // should start from the index (home) page //
     cy.visit('http://localhost:3000/');
 
-    cy.get('[id=hamburger-menu]').click();
+    cy.get('[data-testid=hamburger-menu]').click();
 
     // Find a link with the attribute containing "projects" and click it
     cy.get('a[href*="projects"]').click();
@@ -90,7 +90,7 @@ describe('Drawer Navigation', () => {
     // should start from the index (home) page //
     cy.visit('http://localhost:3000/');
 
-    cy.get('[id=hamburger-menu]').click();
+    cy.get('[data-testid=hamburger-menu]').click();
 
     // Find a link with the attribute containing "contact" and click it
     cy.get('a[href*="contact"]').click();
@@ -103,7 +103,7 @@ describe('Drawer Navigation', () => {
     // should start from the index (home) page //
     cy.visit('http://localhost:3000/');
 
-    cy.get('[id=hamburger-menu]').click();
+    cy.get('[data-testid=hamburger-menu]').click();
 
     // Find a link with the attribute containing "about" and click it
     cy.get('a[href*="about"]').click();
@@ -111,7 +111,7 @@ describe('Drawer Navigation', () => {
     // The new url should include "/about"
     cy.url().should('include', '/about');
 
-    cy.get('[id=hamburger-menu]').click();
+    cy.get('[data-testid=hamburger-menu]').click();
 
     // Find a link with the attribute containing "home" and click it
     cy.get('a[id*="home"]').click();
