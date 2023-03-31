@@ -30,7 +30,7 @@ export default function NavBar() {
         <div className="md:hidden pt-2 pb-2" data-testid="navbar-hamburger-menu">
           <HamburgerMenu hamburgerIsOpen={hamburgerIsOpen} setHamburgerIsOpen={setHamburgerIsOpen} />
         </div>
-        <DrawerMenu hamburgerIsOpen={hamburgerIsOpen} setHamburgerIsOpen={setHamburgerIsOpen} />
+        <DrawerMenu hamburgerIsOpen={hamburgerIsOpen} />
         {darkBackground}
       </nav>
     </header>
