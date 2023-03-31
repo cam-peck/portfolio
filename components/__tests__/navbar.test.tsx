@@ -3,25 +3,27 @@ import NavBar from '../navbar';
 import '@testing-library/jest-dom';
 
 describe('NavBar', () => {
-  it('renders two CP emblems -- one in the navbar and one in the navDrawer', () => {
+  it('renders my full name twice -- once in the navbar and one in the navDrawer', () => {
     render(<NavBar />);
 
-    const cpEmblem = screen.getAllByAltText('navbar-emblem');
+    const fullName = screen.getByRole('heading', { name: 'CAMERON PECK' });
+    const abbreviatedName = screen.getByRole('heading', { name: 'CP' });
 
-    expect(cpEmblem).toHaveLength(2);
+    expect(fullName).toBeInTheDocument();
+    expect(abbreviatedName).toBeInTheDocument();
   });
 
   it('contains four links to Home, About, Projects, and Contact', () => {
     render(<NavBar />);
 
-    const homeLink = screen.getAllByText('Home');
-    const aboutLink = screen.getAllByText('About');
-    const projectsLink = screen.getAllByText('Projects');
-    const contactLink = screen.getAllByText('Contact');
+    const homeLink = screen.getByText('Home');
+    const aboutLink = screen.getByText('About');
+    const projectsLink = screen.getByText('Projects');
+    const contactLink = screen.getByText('Contact');
 
-    expect(homeLink[0]).toHaveAttribute('href', '/');
-    expect(aboutLink[0]).toHaveAttribute('href', '/about');
-    expect(projectsLink[0]).toHaveAttribute('href', '/projects');
-    expect(contactLink[0]).toHaveAttribute('href', '/contact');
+    expect(homeLink).toHaveAttribute('href', '/');
+    expect(aboutLink).toHaveAttribute('href', '/about');
+    expect(projectsLink).toHaveAttribute('href', '/projects');
+    expect(contactLink).toHaveAttribute('href', '/contact');
   });
 });

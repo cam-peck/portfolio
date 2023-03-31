@@ -5,18 +5,25 @@ export default function Home() {
   return (
     <main className="max-w-6xl mx-auto px-6 pt-4 mdlg:pt-8">
       <div className="mdlg:flex mdlg:mt-28 justify-center">
+        {/* Profile Image */}
         <div className="mt-6 w-full mdlg:w-4/12 flex justify-center order-first mdlg:order-last">
           <Image className="rounded-[30%] mdlg:w-[300px]" src="/headshot.jpg" width={240} height={200} alt="profile-image" />
         </div>
+
+        {/* Header & Sub-Header Text */}
         <div className="mdlg:w-1/2 order-last mdlg:order-first">
           <div className="flex flex-col justify-center items-center mdlg:items-start mt-6 leading-tight">
-            <h1 className="text-[48px] font-bold text-charcoal text-center mdlg:text-left">Full-Stack PERN Developer</h1>
+            <h1 data-testid="main-header" className="text-[48px] font-bold text-charcoal text-center mdlg:text-left">
+              Full-Stack PERN Developer
+            </h1>
           </div>
           <div className="mt-6 flex justify-center items-center text-center mdlg:text-left mdlg:justify-start mdlg:pb-4 text-[18px] mb-2">
-            <p className="text-black w-10/12">
+            <h2 data-testid="sub-header" className="text-black w-10/12">
               Howdy! I&apos;m Cameron Peck, a Software Developer based in Indianapolis. E2E testing is my passion.
-            </p>
+            </h2>
           </div>
+
+          {/* GitHub & LinkedIn Icons */}
           <div className="flex justify-center mdlg:justify-start items-center">
             <Link href="https://github.com/cam-peck" target="_blank">
               <div className="mt-[2px] hover:bg-darkgray hover:bg-opacity-10 pr-3 py-1.5">
@@ -25,12 +32,14 @@ export default function Home() {
             </Link>
             <Link href="https://www.linkedin.com/in/cameronjpeck/" target="_blank">
               <div className="px-3 py-3 hover:bg-darkgray hover:bg-opacity-10">
-                <Image src="/icons/linkedin.png" alt="github-icon" width={90} height={50} />
+                <Image src="/icons/linkedin.png" alt="linkedin-icon" width={90} height={50} />
               </div>
             </Link>
           </div>
         </div>
       </div>
+
+      {/* Tech Stack Icons */}
       <div className="mt-20 mdlg:flex mdlg:w-10/12 mdlg:mx-auto">
         <p className="text-charcoal text-center mdlg:text-left font-bold text-[20px] mdlg:border-r-2 mdlg:pr-6 mdlg:flex items-center">
           Tech Stack

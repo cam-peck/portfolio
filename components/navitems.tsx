@@ -21,7 +21,6 @@ export default function NavItems(props: NavItemsProps) {
     }
   };
 
-  console.log('hamburg is open: ', hamburgerIsOpen);
   return (
     <div onClick={(event) => handleClick(event)} className={hamburgerIsOpen ? drawerNav : regularNav}>
       <Link className={hamburgerIsOpen ? drawerLink : regularLink} id="home" href="/">
