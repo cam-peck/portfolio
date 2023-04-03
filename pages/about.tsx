@@ -1,6 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import Image from 'next/image';
-import { start } from 'repl';
 
 export default function About() {
   const [isDown, setIsDown] = useState<boolean>(false);
@@ -42,7 +41,7 @@ export default function About() {
         onMouseMove={(event) => drag(event)}
         onMouseLeave={setMouseUp}
       >
-        <Image className="min-w-[1100px]" src="/about-me.png" width={1600} height={1600} alt="profile-image" />
+        <Image className="min-w-[1100px]" src="/about-me.png" width={1600} height={1600} alt="about-me-image" draggable={false} />
       </div>
     </main>
   );
