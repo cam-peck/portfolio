@@ -14,9 +14,9 @@ export default function ProjectCard({ currentProjectIndex, projectData, moveForw
 
   return (
     <section>
-      <div className="flex gap-8 justify-center items-center mb-12">
+      <div className="flex flex-col lg:flex-row gap-8 justify-center items-center mb-12">
         {/* Backward Arrow */}
-        <div>
+        <div className="hidden lg:block ">
           <i className="fa-solid fa-chevron-left text-[32px] hover:cursor-pointer hover:text-charcoal" onClick={moveBackward} />
         </div>
 
@@ -47,7 +47,7 @@ export default function ProjectCard({ currentProjectIndex, projectData, moveForw
         </div>
 
         {/* Forward Arrow */}
-        <div>
+        <div className="hidden lg:block">
           <i className="fa-solid fa-chevron-right text-[32px] hover:cursor-pointer hover:text-charcoal" onClick={moveForward} />
         </div>
       </div>
