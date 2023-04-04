@@ -3,7 +3,7 @@ import ProjectCard from '../carousel/project-card';
 import projectData from '../carousel/project-data';
 import '@testing-library/jest-dom';
 
-describe('Projects', () => {
+describe('Project Card Component', () => {
   let moveForward: () => void;
   let moveBackward: () => void;
   beforeEach(() => {
