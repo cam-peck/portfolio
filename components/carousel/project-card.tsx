@@ -28,9 +28,13 @@ export default function ProjectCard({ currentProjectIndex, projectData, moveForw
             <p className="text-cardtextgray text-[18px]">{description}</p>
           </div>
           <div className="px-6 pt-4 pb-8 flex gap-4 text-linkpurple text-[18px]">
-            <a href={live} target="_blank">
-              Live
-            </a>
+            {live.includes('https') ? (
+              <a href={live} target="_blank">
+                Live
+              </a>
+            ) : (
+              <p>{live}</p>
+            )}
             <a href={github} target="_blank">
               GitHub
             </a>

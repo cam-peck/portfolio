@@ -8,11 +8,11 @@ interface ProgressDots {
 
 export default function ProgressDots({ currentProjectIndex, handleDotClick, projectData }: ProgressDots) {
   return (
-    <div className="w-full flex gap-8">
+    <div className="w-full flex justify-center gap-8">
       {projectData.map((data, index) => {
         let circleType: string;
         if (index === currentProjectIndex) {
-          circleType = 'fa-solid';
+          circleType = 'fa-solid text-charcoal';
         } else {
           circleType = 'fa-regular';
         }
