@@ -20,6 +20,16 @@ export default function Projects() {
     }
   };
 
+  const moveForward = () => {
+    if (currentProjectIndex === projectData.length - 1) setCurrentProjectIndex(0);
+    else setCurrentProjectIndex(currentProjectIndex + 1);
+  };
+
+  const moveBackward = () => {
+    if (currentProjectIndex === 0) setCurrentProjectIndex(projectData.length - 1);
+    else setCurrentProjectIndex(currentProjectIndex - 1);
+  };
+
   return (
     <main className="max-w-6xl mx-auto px-6 pt-4 mdlg:pt-8">
       <div className="mb-16 pb-2 border-b-2">
@@ -27,7 +37,12 @@ export default function Projects() {
           Projects
         </h1>
       </div>
-      <ProjectCard currentProjectIndex={currentProjectIndex} projectData={projectData} />
+      <ProjectCard
+        currentProjectIndex={currentProjectIndex}
+        projectData={projectData}
+        moveForward={moveForward}
+        moveBackward={moveBackward}
+      />
       <ProgressDots handleDotClick={handleDotClick} currentProjectIndex={currentProjectIndex} projectData={projectData} />
     </main>
   );

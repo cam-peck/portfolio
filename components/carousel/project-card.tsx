@@ -5,15 +5,21 @@ import { ProjectData } from './project-data';
 interface ProjectCard {
   currentProjectIndex: number;
   projectData: ProjectData[];
+  moveForward: () => void;
+  moveBackward: () => void;
 }
 
-export default function ProjectCard({ currentProjectIndex, projectData }: ProjectCard) {
+export default function ProjectCard({ currentProjectIndex, projectData, moveForward, moveBackward }: ProjectCard) {
   const { imageUrl, mainAltText, gifUrl, gifAltText, title, description, live, github } = projectData[currentProjectIndex];
 
   return (
     <section>
-      {/* Carousel Card */}
       <div className="flex gap-8 justify-center items-center mb-12">
+        {/* Backward Arrow */}
+        <div>
+          <i className="fa-solid fa-chevron-left text-[32px] hover:cursor-pointer hover:text-charcoal" onClick={moveBackward} />
+        </div>
+
         {/* Info */}
         <div className="max-w-[375px] rounded overflow-hidden shadow-lg bg-white">
           <Image src={imageUrl} alt={mainAltText} width={400} height={200} />
@@ -30,9 +36,15 @@ export default function ProjectCard({ currentProjectIndex, projectData }: Projec
             </a>
           </div>
         </div>
+
         {/* Gif */}
         <div>
           <Image src={gifUrl} alt={gifAltText} width={800} height={400} priority />
+        </div>
+
+        {/* Forward Arrow */}
+        <div>
+          <i className="fa-solid fa-chevron-right text-[32px] hover:cursor-pointer hover:text-charcoal" onClick={moveForward} />
         </div>
       </div>
     </section>
