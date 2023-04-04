@@ -1,10 +1,18 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import ProjectCard from '@/components/carousel/project-card';
 import ProgressDots from '@/components/carousel/progress-dots';
 import projectData from '@/components/carousel/project-data';
 
 export default function Projects() {
-  const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(2);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(Math.floor(projectData.length / 2));
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      if (currentProjectIndex === projectData.length - 1) setCurrentProjectIndex(0);
+      else setCurrentProjectIndex(currentProjectIndex + 1);
+    }, 25000);
+    return () => clearTimeout(timeoutId);
+  }, [currentProjectIndex]);
 
   const handleDotClick = (index: number) => {
     if (index !== null) {
