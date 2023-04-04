@@ -1,22 +1,13 @@
-import projectData from '@/components/project-data';
+import projectData from '@/components/carousel/project-data';
 import Image from 'next/image';
 import React from 'react';
 
 interface ProjectCard {
   currentProjectIndex: number;
-  setCurrentProjectIndex: React.Dispatch<React.SetStateAction<number>>;
 }
 
-export default function ProjectCard({ currentProjectIndex, setCurrentProjectIndex }: ProjectCard) {
+export default function ProjectCard({ currentProjectIndex }: ProjectCard) {
   const { imageUrl, mainAltText, gifUrl, gifAltText, title, description, live, github } = projectData[currentProjectIndex];
-
-  const handleDotClick = (index: number) => {
-    console.log('outside index');
-    if (index) {
-      console.log('clicking', index);
-      setCurrentProjectIndex(index);
-    }
-  };
 
   return (
     <section>
@@ -43,32 +34,6 @@ export default function ProjectCard({ currentProjectIndex, setCurrentProjectInde
           <Image src={gifUrl} alt={gifAltText} width={800} height={400} priority />
         </div>
       </div>
-
-      {/* Carousel Progress Dots */}
-      <div className="w-full flex gap-8">
-        {projectData.map((data, index) => {
-          return (
-            <RenderCircle key={index} active={index === currentProjectIndex ? true : false} index={index} handleDotClick={handleDotClick} />
-          );
-        })}
-      </div>
     </section>
   );
-}
-
-interface RenderCircle {
-  key: number;
-  active: boolean;
-  index: number;
-  handleDotClick: (index: number) => void;
-}
-
-function RenderCircle({ active, handleDotClick, index }: RenderCircle) {
-  let circleType: string;
-  if (active) {
-    circleType = 'fa-solid';
-  } else {
-    circleType = 'fa-regular';
-  }
-  return <i className={`fa-circle ${circleType} text-xl hover:cursor-pointer`} onClick={() => handleDotClick(index)} />;
 }

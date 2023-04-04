@@ -1,8 +1,15 @@
 import { useState } from 'react';
-import ProjectCard from '@/components/project-card';
+import ProjectCard from '@/components/carousel/project-card';
+import ProgressDots from '@/components/carousel/progress-dots';
 
 export default function Projects() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(2);
+
+  const handleDotClick = (index: number) => {
+    if (index !== null) {
+      setCurrentProjectIndex(index);
+    }
+  };
 
   return (
     <main className="max-w-6xl mx-auto px-6 pt-4 mdlg:pt-8">
@@ -11,7 +18,8 @@ export default function Projects() {
           Projects
         </h1>
       </div>
-      <ProjectCard currentProjectIndex={currentProjectIndex} setCurrentProjectIndex={setCurrentProjectIndex} />
+      <ProjectCard currentProjectIndex={currentProjectIndex} />
+      <ProgressDots handleDotClick={handleDotClick} currentProjectIndex={currentProjectIndex} />
     </main>
   );
 }
