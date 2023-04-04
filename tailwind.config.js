@@ -16,6 +16,9 @@ module.exports = {
       lightpurple: '#A259FE',
       lightgray: '#9ca3af',
       darkgray: '#111827',
+      linkpurple: '#7749F8',
+      cardtextgray: '#68717A',
+      cardbordergray: '#A1A1A1',
     },
     screens: {
       sm: '640px',
