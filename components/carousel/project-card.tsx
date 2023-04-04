@@ -1,12 +1,13 @@
-import projectData from '@/components/carousel/project-data';
 import Image from 'next/image';
 import React from 'react';
+import { ProjectData } from './project-data';
 
 interface ProjectCard {
   currentProjectIndex: number;
+  projectData: ProjectData[];
 }
 
-export default function ProjectCard({ currentProjectIndex }: ProjectCard) {
+export default function ProjectCard({ currentProjectIndex, projectData }: ProjectCard) {
   const { imageUrl, mainAltText, gifUrl, gifAltText, title, description, live, github } = projectData[currentProjectIndex];
 
   return (

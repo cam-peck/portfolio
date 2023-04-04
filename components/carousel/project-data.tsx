@@ -1,4 +1,4 @@
-type ProjectData = {
+export type ProjectData = {
   imageUrl: string;
   mainAltText: string;
   gifUrl: string;

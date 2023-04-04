@@ -1,11 +1,12 @@
-import projectData from '@/components/carousel/project-data';
+import { ProjectData } from './project-data';
 
 interface ProgressDots {
   currentProjectIndex: number;
+  projectData: ProjectData[];
   handleDotClick: (index: number) => void;
 }
 
-export default function ProgressDots({ currentProjectIndex, handleDotClick }: ProgressDots) {
+export default function ProgressDots({ currentProjectIndex, handleDotClick, projectData }: ProgressDots) {
   return (
     <div className="w-full flex gap-8">
       {projectData.map((data, index) => {

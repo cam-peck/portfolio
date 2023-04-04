@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ProjectCard from '@/components/carousel/project-card';
 import ProgressDots from '@/components/carousel/progress-dots';
+import projectData from '@/components/carousel/project-data';
 
 export default function Projects() {
   const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(2);
@@ -18,8 +19,8 @@ export default function Projects() {
           Projects
         </h1>
       </div>
-      <ProjectCard currentProjectIndex={currentProjectIndex} />
-      <ProgressDots handleDotClick={handleDotClick} currentProjectIndex={currentProjectIndex} />
+      <ProjectCard currentProjectIndex={currentProjectIndex} projectData={projectData} />
+      <ProgressDots handleDotClick={handleDotClick} currentProjectIndex={currentProjectIndex} projectData={projectData} />
     </main>
   );
 }
