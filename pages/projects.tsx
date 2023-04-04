@@ -2,7 +2,7 @@ import { useState } from 'react';
 import ProjectCard from '@/components/project-card';
 
 export default function Projects() {
-  const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0);
+  const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(2);
 
   return (
     <main className="max-w-6xl mx-auto px-6 pt-4 mdlg:pt-8">
@@ -11,7 +11,7 @@ export default function Projects() {
           Projects
         </h1>
       </div>
-      <ProjectCard currentProjectIndex={currentProjectIndex} />
+      <ProjectCard currentProjectIndex={currentProjectIndex} setCurrentProjectIndex={setCurrentProjectIndex} />
     </main>
   );
 }
