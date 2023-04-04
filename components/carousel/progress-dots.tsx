@@ -8,7 +8,7 @@ interface ProgressDots {
 
 export default function ProgressDots({ currentProjectIndex, handleDotClick, projectData }: ProgressDots) {
   return (
-    <div className="w-full flex justify-center gap-8">
+    <div data-testid="project-dots" className="w-full flex justify-center gap-8">
       {projectData.map((data, index) => {
         let circleType: string;
         if (index === currentProjectIndex) {

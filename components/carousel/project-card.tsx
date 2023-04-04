@@ -13,7 +13,7 @@ export default function ProjectCard({ currentProjectIndex, projectData, moveForw
   const { imageUrl, mainAltText, gifUrl, gifAltText, title, description, live, github } = projectData[currentProjectIndex];
 
   return (
-    <section>
+    <section data-testid="project-card">
       <div className="flex flex-col lg:flex-row gap-8 justify-center items-center mb-12">
         {/* Backward Arrow */}
         <div className="hidden lg:block ">
