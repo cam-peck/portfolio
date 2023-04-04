@@ -17,7 +17,12 @@ export default function ProgressDots({ currentProjectIndex, handleDotClick, proj
           circleType = 'fa-regular';
         }
         return (
-          <i key={data.title} className={`fa-circle ${circleType} text-xl hover:cursor-pointer`} onClick={() => handleDotClick(index)} />
+          <i
+            data-testid={`dot-${index}`}
+            key={data.title}
+            className={`fa-circle ${circleType} text-xl hover:cursor-pointer`}
+            onClick={() => handleDotClick(index)}
+          />
         );
       })}
     </div>
