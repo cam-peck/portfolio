@@ -1,24 +1,21 @@
+import { useState } from 'react';
+import TextInput from './inputs/text-input';
+
 export default function ContactForm() {
+  const [name, setName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+
+  const clearForm = () => {
+    setName('');
+    setEmail('');
+    setMessage('');
+  };
+
   return (
     <form className="flex flex-col gap-8 bg-charcoal p-8 rounded-xl text-lg">
-      <div className="flex flex-col gap-2 text-ghostwhite">
-        <label htmlFor="name">Name:</label>
-        <input
-          className="border border-charcoal active:border-ghostwhite bg-paynesgray bg-opacity-90 rounded-lg p-3 pl-[12px]"
-          name="name"
-          placeholder="Rand al'Thor"
-          type="text"
-        />
-      </div>
-      <div className="flex flex-col gap-2 text-ghostwhite">
-        <label htmlFor="email">Email:</label>
-        <input
-          className="border-2 border-charcoal bg-paynesgray bg-opacity-90 rounded-lg p-3 pl-[12px]"
-          name="email"
-          type="text"
-          placeholder="therealdragon@thewheel.net"
-        />
-      </div>
+      <TextInput labelText="Name:" name="name" value={name} onChange={setName} placeholder="Rand al'Thor" />
+      <TextInput labelText="Email:" name="email" value={email} onChange={setEmail} placeholder="therealdragon@wheeloftime.net" />
       <div className="flex flex-col gap-2 text-ghostwhite">
         <label htmlFor="message">Message:</label>
         <textarea
@@ -29,7 +26,11 @@ export default function ContactForm() {
         />
       </div>
       <div className="flex w-full justify-end gap-8">
-        <button className="p-2 px-3 min-w-[120px] bg-danger-red text-ghostwhite rounded-lg shadow-lg" type="button">
+        <button
+          onClick={() => clearForm()}
+          className="p-2 px-3 min-w-[120px] bg-danger-red text-ghostwhite rounded-lg shadow-lg"
+          type="button"
+        >
           Clear Form
         </button>
         <button className="p-2 px-3 min-w-[120px] bg-lightblue rounded-lg shadow-lg" type="submit">
