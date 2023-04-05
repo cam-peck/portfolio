@@ -1,37 +1,37 @@
 import { fireEvent, render, screen } from '@testing-library/react';
-import TextInput from '../inputs/text-input';
+import TextareaInput from '../inputs/textarea-input';
 import '@testing-library/jest-dom';
 
 describe('Text Input Component', () => {
   let onChange: () => void;
 
   beforeEach(() => {
-    const labelText = 'Testing:';
-    const name = 'testing';
-    const placeholder = 'the best test!';
-    const value = 'the bestest value';
+    const labelText = 'Top Secret Message:';
+    const name = 'message';
+    const placeholder = 'the best message!';
+    const value = 'Treasure today.';
     onChange = jest.fn();
-    render(<TextInput labelText={labelText} name={name} placeholder={placeholder} value={value} onChange={onChange} />);
+    render(<TextareaInput labelText={labelText} name={name} placeholder={placeholder} value={value} onChange={onChange} />);
   });
 
   it('renders the appropriate label text', () => {
-    const nameLabel = screen.getByText('Testing:');
+    const nameLabel = screen.getByText('Top Secret Message:');
     expect(nameLabel).toBeInTheDocument();
   });
 
   it('renders the appropriate placeholder text', () => {
-    const placeholder = screen.getByPlaceholderText('the best test!');
+    const placeholder = screen.getByPlaceholderText('the best message!');
     expect(placeholder).toBeInTheDocument();
   });
 
   it('renders the appropriate value text', () => {
-    const nameInput = screen.getByRole('textbox', { name: 'testing' });
-    expect((nameInput as HTMLInputElement).value).toBe('the bestest value');
+    const nameInput = screen.getByRole('textbox', { name: 'message' });
+    expect((nameInput as HTMLInputElement).value).toBe('Treasure today.');
   });
 
   it('calls the onChange function with the new value when a user types in the input.', () => {
-    const nameInput = screen.getByRole('textbox', { name: 'testing' });
-    fireEvent.change(nameInput, { target: { value: 'woohoo!' } });
-    expect(onChange).toHaveBeenCalledWith('woohoo!');
+    const nameInput = screen.getByRole('textbox', { name: 'message' });
+    fireEvent.change(nameInput, { target: { value: 'Good things come to those who wait.' } });
+    expect(onChange).toHaveBeenCalledWith('Good things come to those who wait.');
   });
 });
