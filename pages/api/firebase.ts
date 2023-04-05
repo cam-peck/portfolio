@@ -21,8 +21,9 @@ const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 const db = getFirestore(app);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+  const { name, email, message } = req.body;
   const newContactEntry = doc(collection(db, 'contact-data'));
-  const data = { test: 'test2' };
+  const data = { name, email, message };
   await setDoc(newContactEntry, data);
   res.send(data);
 }

@@ -6,6 +6,8 @@ export default function ContactForm() {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
+  const [loading, setLoading] = useState<boolean>(false);
+  const [firebaseError, setFirebaseError] = useState<boolean>(false);
 
   const clearForm = () => {
     setName('');
@@ -14,17 +16,25 @@ export default function ContactForm() {
   };
 
   const handleSubmit = async (event: React.FormEvent) => {
+    setLoading(true);
     event.preventDefault();
-    console.log('submitting!');
-    console.log({ name, email, message });
     const req = {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, message }),
     };
-    const response = await fetch('/api/firebase', req);
-    const responseData = await response.json();
-    console.log(responseData);
-    clearForm();
-    alert('Submit successful! Thanks for reaching out.');
+    try {
+      await fetch('/api/firebase', req);
+      setLoading(false);
+      clearForm();
+      alert('Submit successful! Thanks for reaching out.');
+    } catch (err) {
+      setLoading(false);
+      setFirebaseError(true);
+      console.error(err);
+    }
   };
 
   return (
