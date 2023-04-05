@@ -22,8 +22,13 @@ const db = getFirestore(app);
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { name, email, message } = req.body;
-  const newContactEntry = doc(collection(db, 'contact-data'));
-  const data = { name, email, message };
-  await setDoc(newContactEntry, data);
-  res.send(data);
+  try {
+    const newContactEntry = doc(collection(db, 'contact-data'));
+    const data = { name, email, message };
+    await setDoc(newContactEntry, data);
+    res.send(data);
+  } catch (err) {
+    console.error(err);
+    throw new Error('We encountered a serverside error.');
+  }
 }

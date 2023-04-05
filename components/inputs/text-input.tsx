@@ -24,6 +24,7 @@ export default function TextInput({ labelText, name, placeholder, value, onChang
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
         type="text"
+        required
       />
     </div>
   );

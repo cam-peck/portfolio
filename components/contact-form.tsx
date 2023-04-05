@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import TextInput from './inputs/text-input';
 import TextareaInput from './inputs/textarea-input';
+import LoadingSpinner from './loading-spinner';
 
 export default function ContactForm() {
   const [name, setName] = useState<string>('');
   const [email, setEmail] = useState<string>('');
   const [message, setMessage] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
-  const [firebaseError, setFirebaseError] = useState<boolean>(false);
 
   const clearForm = () => {
     setName('');
@@ -26,13 +26,17 @@ export default function ContactForm() {
       body: JSON.stringify({ name, email, message }),
     };
     try {
-      await fetch('/api/firebase', req);
+      const response = await fetch('/api/firebase', req);
+      console.log(response);
+      if (response.status !== 200) {
+        throw new Error();
+      }
       setLoading(false);
       clearForm();
       alert('Submit successful! Thanks for reaching out.');
     } catch (err) {
       setLoading(false);
-      setFirebaseError(true);
+      alert('We encountered an error on our end. Please try to submit again later.');
       console.error(err);
     }
   };
@@ -63,6 +67,7 @@ export default function ContactForm() {
           Submit
         </button>
       </div>
+      {loading ? <LoadingSpinner /> : ''}
     </form>
   );
 }

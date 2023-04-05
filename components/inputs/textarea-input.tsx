@@ -22,6 +22,7 @@ export default function TextareaInput({ labelText, name, placeholder, value, onC
         onChange={(event) => onChange(event.target.value)}
         name="message"
         placeholder={placeholder}
+        required
       />
     </div>
   );
