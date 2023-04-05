@@ -16,6 +16,7 @@ export default function TextareaInput({ labelText, name, placeholder, value, onC
       <label htmlFor={name}>{labelText}</label>
       <textarea
         style={style}
+        aria-label={name}
         className="border border-charcoal bg-paynesgray focus:border-ghostwhite bg-opacity-90 rounded-lg p-3 pl-[12px]"
         rows={4}
         value={value}

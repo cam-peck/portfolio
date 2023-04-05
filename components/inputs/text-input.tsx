@@ -19,6 +19,7 @@ export default function TextInput({ labelText, name, placeholder, value, onChang
       <input
         className="border border-charcoal focus:border-ghostwhite bg-paynesgray bg-opacity-90 rounded-lg p-3"
         name={name}
+        aria-label={name}
         style={style}
         value={value}
         onChange={(event) => onChange(event.target.value)}
