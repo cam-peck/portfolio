@@ -13,10 +13,16 @@ export default function ContactForm() {
     setMessage('');
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
     console.log('submitting!');
     console.log({ name, email, message });
+    const req = {
+      method: 'POST',
+    };
+    const response = await fetch('/api/firebase', req);
+    const responseData = await response.json();
+    console.log(responseData);
     clearForm();
     alert('Submit successful! Thanks for reaching out.');
   };
