@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import TextInput from './inputs/text-input';
 import TextareaInput from './inputs/textarea-input';
 
@@ -13,8 +13,16 @@ export default function ContactForm() {
     setMessage('');
   };
 
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    console.log('submitting!');
+    console.log({ name, email, message });
+    clearForm();
+    alert('Submit successful! Thanks for reaching out.');
+  };
+
   return (
-    <form className="flex flex-col gap-8 bg-charcoal p-8 rounded-xl text-lg">
+    <form onSubmit={(event) => handleSubmit(event)} className="flex flex-col gap-8 bg-charcoal p-8 rounded-xl text-lg">
       <TextInput labelText="Name:" name="name" value={name} onChange={setName} placeholder="Rand al'Thor" />
       <TextInput labelText="Email:" name="email" value={email} onChange={setEmail} placeholder="therealdragon@wheeloftime.net" />
       <TextareaInput
@@ -27,12 +35,15 @@ export default function ContactForm() {
       <div className="flex w-full justify-end gap-8">
         <button
           onClick={() => clearForm()}
-          className="p-2 px-3 w-[100px] xsm:min-w-[120px] bg-danger-red text-ghostwhite rounded-lg shadow-lg"
+          className="p-2 px-3 w-[100px] xsm:min-w-[120px] bg-danger-red text-ghostwhite rounded-lg shadow-lg hover:scale-[1.02] active:translate-y-[1px]"
           type="button"
         >
           Clear Form
         </button>
-        <button className="p-2 px-3 w-[100px] xsm:min-w-[120px] bg-lightblue rounded-lg shadow-lg" type="submit">
+        <button
+          className="p-2 px-3 w-[100px] xsm:min-w-[120px] bg-lightblue rounded-lg shadow-lg hover:scale-[1.03] active:translate-y-[1px]"
+          type="submit"
+        >
           Submit
         </button>
       </div>
