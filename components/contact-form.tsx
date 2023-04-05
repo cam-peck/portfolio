@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import TextInput from './inputs/text-input';
+import TextareaInput from './inputs/textarea-input';
 
 export default function ContactForm() {
   const [name, setName] = useState<string>('');
@@ -16,24 +17,22 @@ export default function ContactForm() {
     <form className="flex flex-col gap-8 bg-charcoal p-8 rounded-xl text-lg">
       <TextInput labelText="Name:" name="name" value={name} onChange={setName} placeholder="Rand al'Thor" />
       <TextInput labelText="Email:" name="email" value={email} onChange={setEmail} placeholder="therealdragon@wheeloftime.net" />
-      <div className="flex flex-col gap-2 text-ghostwhite">
-        <label htmlFor="message">Message:</label>
-        <textarea
-          className="border-2 border-charcoal bg-paynesgray bg-opacity-90 rounded-lg p-3 pl-[12px]"
-          rows={4}
-          name="message"
-          placeholder="The Wheel of Time turns, and Ages come and pass, leaving memories that become legend. Legend fades to myth, and even myth is long forgotten when the Age that gave it birth comes again."
-        />
-      </div>
+      <TextareaInput
+        labelText="Message:"
+        name="message"
+        value={message}
+        onChange={setMessage}
+        placeholder="The Wheel of Time turns, and Ages come and pass, leaving memories that become legend. Legend fades to myth, and even myth is long forgotten when the Age that gave it birth comes again."
+      />
       <div className="flex w-full justify-end gap-8">
         <button
           onClick={() => clearForm()}
-          className="p-2 px-3 min-w-[120px] bg-danger-red text-ghostwhite rounded-lg shadow-lg"
+          className="p-2 px-3 w-[100px] xsm:min-w-[120px] bg-danger-red text-ghostwhite rounded-lg shadow-lg"
           type="button"
         >
           Clear Form
         </button>
-        <button className="p-2 px-3 min-w-[120px] bg-lightblue rounded-lg shadow-lg" type="submit">
+        <button className="p-2 px-3 w-[100px] xsm:min-w-[120px] bg-lightblue rounded-lg shadow-lg" type="submit">
           Submit
         </button>
       </div>

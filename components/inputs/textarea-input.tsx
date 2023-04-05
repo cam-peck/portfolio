@@ -1,12 +1,22 @@
-export default function TextareaInput() {
+interface TextareaInput {
+  labelText: string;
+  name: string;
+  placeholder: string;
+  value: string;
+  onChange: (newValue: string) => void;
+}
+
+export default function TextareaInput({ labelText, name, placeholder, value, onChange }: TextareaInput) {
   return (
-    <div>
-      <label htmlFor="message">Message:</label>
+    <div className="flex flex-col gap-2 text-ghostwhite">
+      <label htmlFor={name}>{labelText}</label>
       <textarea
         className="border-2 border-charcoal bg-paynesgray bg-opacity-90 rounded-lg p-3 pl-[12px]"
         rows={4}
+        value={value}
+        onChange={(event) => onChange(event.target.value)}
         name="message"
-        placeholder="The Wheel of Time turns, and Ages come and pass, leaving memories that become legend. Legend fades to myth, and even myth is long forgotten when the Age that gave it birth comes again."
+        placeholder={placeholder}
       />
     </div>
   );
