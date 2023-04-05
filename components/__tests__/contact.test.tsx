@@ -13,11 +13,11 @@ describe('Contact Page', () => {
   });
 
   it('renders the contact form', () => {
-    const nameLabel = screen.getByLabelText('name');
+    const nameLabel = screen.getByText('Name:');
     const nameInput = screen.getByRole('textbox', { name: 'name' });
-    const emailLabel = screen.getByLabelText('email');
+    const emailLabel = screen.getByText('Email:');
     const emailInput = screen.getByRole('textbox', { name: 'email' });
-    const messageLabel = screen.getByLabelText('message');
+    const messageLabel = screen.getByText('Message:');
     const messageInput = screen.getByRole('textbox', { name: 'message' });
     const clearFormButton = screen.getByRole('button', { name: 'Clear Form' });
     const submitButton = screen.getByRole('button', { name: 'Submit' });
