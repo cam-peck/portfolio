@@ -2,10 +2,10 @@
 /// <reference types="cypress" />
 
 describe('Main Navigation', () => {
-  it('should navigate to the about page', () => {
-    // should start from the index (home) page //
+  beforeEach(() => {
     cy.visit('http://localhost:3000/');
-
+  });
+  it('should navigate to the about page', () => {
     // Find a link with the attribute containing "about" and click it
     cy.get('a[href*="about"]').click();
 
@@ -14,9 +14,6 @@ describe('Main Navigation', () => {
   });
 
   it('should navigate to the projects page', () => {
-    // should start from the index (home) page //
-    cy.visit('http://localhost:3000/');
-
     // Find a link with the attribute containing "projects" and click it
     cy.get('a[href*="projects"]').click();
 
@@ -25,9 +22,6 @@ describe('Main Navigation', () => {
   });
 
   it('should navigate to the contact page', () => {
-    // should start from the index (home) page //
-    cy.visit('http://localhost:3000/');
-
     // Find a link with the attribute containing "contact" and click it
     cy.get('a[href*="contact"]').click();
 
@@ -36,9 +30,6 @@ describe('Main Navigation', () => {
   });
 
   it('should navigate back to the home page', () => {
-    // should start from the index (home) page //
-    cy.visit('http://localhost:3000/');
-
     // Find a link with the attribute containing "about" and click it
     cy.get('a[href*="about"]').click();
 
@@ -56,14 +47,10 @@ describe('Main Navigation', () => {
 describe('Drawer Navigation', () => {
   beforeEach(() => {
     cy.viewport(550, 750);
+    cy.visit('http://localhost:3000/');
   });
   it('should navigate to the about page', () => {
     // click the hamburger menu
-    // cy.get('[id=hamburger-menu]').click();
-
-    // should start from the index (home) page //
-    cy.visit('http://localhost:3000/');
-
     cy.get('[data-testid=hamburger-menu]').click();
 
     // Find a link with the attribute containing "about" and click it
@@ -74,9 +61,6 @@ describe('Drawer Navigation', () => {
   });
 
   it('should navigate to the projects page', () => {
-    // should start from the index (home) page //
-    cy.visit('http://localhost:3000/');
-
     cy.get('[data-testid=hamburger-menu]').click();
 
     // Find a link with the attribute containing "projects" and click it
@@ -87,9 +71,6 @@ describe('Drawer Navigation', () => {
   });
 
   it('should navigate to the contact page', () => {
-    // should start from the index (home) page //
-    cy.visit('http://localhost:3000/');
-
     cy.get('[data-testid=hamburger-menu]').click();
 
     // Find a link with the attribute containing "contact" and click it
@@ -100,9 +81,6 @@ describe('Drawer Navigation', () => {
   });
 
   it('should navigate back to the home page', () => {
-    // should start from the index (home) page //
-    cy.visit('http://localhost:3000/');
-
     cy.get('[data-testid=hamburger-menu]').click();
 
     // Find a link with the attribute containing "about" and click it

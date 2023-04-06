@@ -82,4 +82,19 @@ describe('Projects', () => {
     expect((newMessageInput as HTMLInputElement).value).toBe('');
     expect(newSubmitButton).toBeInTheDocument();
   });
+
+  it('shows the appropriate error message when submission is unsuccessful', async () => {
+    const nameInput = screen.getByRole('textbox', { name: 'name' });
+    const emailInput = screen.getByRole('textbox', { name: 'email' });
+    const messageInput = screen.getByRole('textbox', { name: 'message' });
+    const submitButton = screen.getByRole('button', { name: 'Submit' });
+
+    fireEvent.change(nameInput, { target: { value: 'Server Thrower' } });
+    fireEvent.change(emailInput, { target: { value: 'thebestthrower@discus.net' } });
+    fireEvent.change(messageInput, { target: { value: 'Nobody throws server errors like I do.' } });
+    fireEvent.click(submitButton);
+
+    await waitForElementToBeRemoved(screen.getByTestId('loading-spinner'));
+    expect(screen.getByText('Oops. We ran into an unexpected error.')).toBeInTheDocument();
+  });
 });

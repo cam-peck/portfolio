@@ -12,12 +12,12 @@ export default function SubmitResponse({ success, onClick }: SubmitResponse) {
 
   return (
     <div className="flex flex-col justify-center items-center w-full bg-charcoal text-ghostwhite p-8 rounded-xl h-[560px]">
-      <h1 data-testid="main-header" className="text-[40px]">
+      <h2 data-testid="main-header" className="text-[40px]">
         {success ? successHeader : failureHeader}
-      </h1>
-      <h1 data-testid="sub-header" className="text-[32px] mb-8">
+      </h2>
+      <h3 data-testid="sub-header" className="text-[32px] mb-8">
         {success ? successSubHeader : failureSubHeader}
-      </h1>
+      </h3>
       <button
         className="p-2 px-3 w-[140px] xsm:min-w-[120px] text-charcoal bg-lightblue rounded-lg shadow-lg hover:scale-[1.03] active:translate-y-[1px]"
         onClick={() => onClick(false)}
