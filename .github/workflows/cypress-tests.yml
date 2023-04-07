@@ -14,8 +14,16 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Print variable
-        run: echo "Checking for ${{secrets.FIREBASE_CONFIG_API_KEY}}"
+      - name: Create env file
+        run: |
+          touch .env
+          echo FIREBASE_CONFIG_API_KEY=${{ secrets.FIREBASE_CONFIG_API_KEY }} >> .env
+          echo FIREBASE_CONFIG_AUTH_DOMAIN=${{ secrets.FIREBASE_CONFIG_AUTH_DOMAIN }} >> .env
+          echo FIREBASE_CONFIG_PROJECT_ID=${{ secrets.FIREBASE_CONFIG_PROJECT_ID }} >> .env
+          echo FIREBASE_CONFIG_STORAGE_BUCKET=${{ secrets.FIREBASE_CONFIG_STORAGE_BUCKET }} >> .env
+          echo FIREBASE_CONFIG_MESSAGING_SENDER_ID=${{ secrets.FIREBASE_CONFIG_MESSAGING_SENDER_ID }} >> .env
+          echo FIREBASE_CONFIG_APP_ID=${{ secrets.FIREBASE_CONFIG_APP_ID }} >> .env
+          echo FIREBASE_CONFIG_MEASUREMENT_ID=${{ secrets.FIREBASE_CONFIG_MEASUREMENT_ID }} >> .env
 
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
