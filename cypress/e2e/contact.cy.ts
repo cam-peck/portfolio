@@ -17,7 +17,7 @@ describe('Home page', () => {
   });
 
   it('renders the renders the error message when firebase is down', () => {
-    // simulate server down for tests
+    // simulate server down
     cy.intercept('POST', '/api/firebase', { statusCode: 500 });
 
     // regular request
