@@ -1,4 +1,4 @@
-// line below required due to jest-cypress conflict -- see https://docs.cypress.io/guides/component-testing/faq#Cypress-Types-Conflict-with-Jest
+// line below required due to jest-cypress -- see https://docs.cypress.io/guides/component-testing/faq#Cypress-Types-Conflict-with-Jest
 /// <reference types="cypress" />
 
 describe('Contact page', () => {
