@@ -14,6 +14,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
+      - name: Print variable
+        run: echo "Checking for ${{secrets.FIREBASE_CONFIG_API_KEY}}"
+
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
       - name: Cypress run
