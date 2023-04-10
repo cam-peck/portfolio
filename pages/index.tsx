@@ -1,9 +1,20 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
 
 export default function Home() {
   return (
     <main className="max-w-6xl mx-auto px-6 pt-4 mdlg:pt-8">
+      <Head>
+        <title>Cameron Peck | Full-Stack Developer</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Mission: Beepossible" />
+        <meta
+          property="og:description"
+          content="A single page application teaching users about the Solar System in a fun and interactive way."
+        />
+        <meta property="og:image" content="https://mission-beepossible.vercel.app/meta-space.jpg" />
+      </Head>
       <div className="mdlg:flex mdlg:mt-28 justify-center">
         {/* Profile Image */}
         <div className="mt-6 w-full mdlg:w-4/12 flex justify-center order-first mdlg:order-last">
