@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
+import profilePic from '../public/headshot.webp';
 
 export default function Home() {
   return (
@@ -17,7 +18,15 @@ export default function Home() {
       <div className="mdlg:flex mdlg:mt-28 justify-center">
         {/* Profile Image */}
         <div className="mt-6 w-full mdlg:w-4/12 flex justify-center order-first mdlg:order-last">
-          <Image className="rounded-[30%] mdlg:w-[300px]" src="/headshot.jpg" width={240} height={200} alt="profile-image" />
+          <Image
+            className="rounded-[30%] mdlg:w-[300px]"
+            src={profilePic}
+            width={240}
+            height={200}
+            alt="profile-image"
+            priority
+            placeholder="blur"
+          />
         </div>
 
         {/* Header & Sub-Header Text */}
@@ -65,7 +74,7 @@ export default function Home() {
             <Image src="/icons/next.png" alt="nextjs-icon" width={50} height={50} />
           </div>
           <div className="flex justify-center">
-            <Image src="/icons/node.png" alt="node-icon" width={50} height={50} />
+            <Image src="/icons/node.png" alt="node-icon" className="w-auto" width={50} height={50} />
           </div>
           <div className="flex justify-center">
             <Image src="/icons/aws.webp" alt="aws-icon" width={50} height={50} />
