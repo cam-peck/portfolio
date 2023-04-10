@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import TextareaInput from '../inputs/textarea-input';
 import '@testing-library/jest-dom';
 
-describe('Text Input Component', () => {
+describe('Textarea', () => {
   let onChange: () => void;
 
   beforeEach(() => {

@@ -3,7 +3,7 @@ import ProjectDots from '../carousel/progress-dots';
 import projectData from '../carousel/project-data';
 import '@testing-library/jest-dom';
 
-describe('Project Dots Component', () => {
+describe('Project Dots', () => {
   let handleDotClick: () => void;
   beforeEach(() => {
     handleDotClick = jest.fn();

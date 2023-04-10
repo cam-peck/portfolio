@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import LoadingSpinner from '../loading-spinner';
 import '@testing-library/jest-dom';
 
-describe('Project Dots Component', () => {
+describe('Loading Spinner', () => {
   beforeEach(() => {
     render(<LoadingSpinner />);
   });

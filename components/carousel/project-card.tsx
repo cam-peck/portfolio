@@ -16,8 +16,12 @@ export default function ProjectCard({ currentProjectIndex, projectData, moveForw
     <section data-testid="project-card">
       <div className="flex flex-col lg:flex-row gap-8 justify-center items-center mb-12">
         {/* Backward Arrow */}
-        <div className="hidden lg:block hover:bg-lightblue p-2 rounded-xl hover:cursor-pointer" onClick={moveBackward}>
-          <i data-testid="backward-arrow" className="fa-solid fa-chevron-left text-[32px] " />
+        <div
+          data-testid="backward-arrow"
+          className="hidden lg:block hover:bg-lightblue p-2 rounded-xl hover:cursor-pointer"
+          onClick={moveBackward}
+        >
+          <i className="fa-solid fa-chevron-left text-[32px] " />
         </div>
 
         {/* Info */}
@@ -66,8 +70,12 @@ export default function ProjectCard({ currentProjectIndex, projectData, moveForw
         </div>
 
         {/* Forward Arrow */}
-        <div className="hidden lg:block hover:bg-lightblue p-2 rounded-xl hover:cursor-pointer" onClick={moveForward}>
-          <i data-testid="forward-arrow" className="fa-solid fa-chevron-right text-[32px]" />
+        <div
+          data-testid="forward-arrow"
+          className="hidden lg:block hover:bg-lightblue p-2 rounded-xl hover:cursor-pointer"
+          onClick={moveForward}
+        >
+          <i className="fa-solid fa-chevron-right text-[32px]" />
         </div>
       </div>
     </section>
