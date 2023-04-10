@@ -5,7 +5,7 @@ import profilePic from '../public/headshot.webp';
 
 export default function Home() {
   return (
-    <main className="max-w-6xl mx-auto px-6 pt-4 mdlg:pt-8">
+    <main className="max-w-6xl mx-auto px-6 pt-4 mdlg:pt-8 mb-8">
       <Head>
         <title>Cameron Peck | Full-Stack Developer</title>
         <link rel="icon" href="/favicon.ico" />
@@ -66,7 +66,7 @@ export default function Home() {
         <div className="pt-2 flex justify-center mdlg:justify-start mb-6">
           <hr className="mdlg:hidden text-charcoal w-[112px] border-[1.5px] mdlg:max-w-full" />
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-4 grid-rows-2 techstack:flex gap-10 justify-center items-center max-w-[300px] sm:max-w-[400px] techstack:max-w-full mx-auto mdlg:mx-12 techstack:mx-12">
+        <div className="grid grid-cols-3 grid-rows-3 mdlg:grid-cols-5 mdlg:grid-rows-2 techstack:flex gap-10 justify-center items-center max-w-[300px] sm:max-w-[400px] techstack:max-w-full mx-auto mdlg:mx-12 techstack:mx-12">
           <div className="flex justify-center">
             <Image src="/icons/react.png" alt="react-icon" width={50} height={50} />
           </div>
@@ -90,6 +90,9 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <Image src="/icons/rtl.png" alt="rtl-icon" width={50} height={50} />
+          </div>
+          <div className="flex justify-center">
+            <Image src="/icons/cypress.png" alt="cypress-icon" width={50} height={50} />
           </div>
         </div>
       </div>

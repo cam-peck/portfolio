@@ -19,7 +19,7 @@ describe('Home', () => {
     expect(profileImage).toBeInTheDocument();
   });
 
-  it('renders 8 coding language & framework images', () => {
+  it('renders 9 coding language & framework images', () => {
     render(<Home />);
 
     const reactImage = screen.getByAltText('react-icon');
@@ -30,6 +30,7 @@ describe('Home', () => {
     const postgresImage = screen.getByAltText('postgres-icon');
     const rtlImage = screen.getByAltText('rtl-icon');
     const jestImage = screen.getByAltText('jest-icon');
+    const cypressImage = screen.getByAltText('cypress-icon');
 
     expect(reactImage).toBeInTheDocument();
     expect(nodeImage).toBeInTheDocument();
@@ -39,6 +40,7 @@ describe('Home', () => {
     expect(postgresImage).toBeInTheDocument();
     expect(rtlImage).toBeInTheDocument();
     expect(jestImage).toBeInTheDocument();
+    expect(cypressImage).toBeInTheDocument();
   });
 
   it('renders two clickable links for GitHub and LinkedIn', () => {
