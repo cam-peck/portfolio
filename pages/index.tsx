@@ -8,12 +8,10 @@ export default function Home() {
       <Head>
         <title>Cameron Peck | Full-Stack Developer</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta property="og:title" content="Mission: Beepossible" />
-        <meta
-          property="og:description"
-          content="A single page application teaching users about the Solar System in a fun and interactive way."
-        />
-        <meta property="og:image" content="https://mission-beepossible.vercel.app/meta-space.jpg" />
+        <meta property="og:title" content="Cameron Peck: Portfolio Site" />
+        <meta property="og:description" content="A personal portfolio to display information about me and my projects." />
+        <meta property="og:image" content="https://portfolio-cam-peck.vercel.app/Open_Graph_Image.webp" />
+        <meta property="og:url" content="https://portfolio-cam-peck.vercel.app/" />
       </Head>
       <div className="mdlg:flex mdlg:mt-28 justify-center">
         {/* Profile Image */}
