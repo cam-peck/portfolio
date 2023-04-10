@@ -13,6 +13,7 @@ export default function Home() {
         <meta property="og:image" content="https://portfolio-cam-peck.vercel.app/Open_Graph_Image.webp" />
         <meta property="og:url" content="https://portfolio-cam-peck.vercel.app/" />
       </Head>
+
       <div className="mdlg:flex mdlg:mt-28 justify-center">
         {/* Profile Image */}
         <div className="mt-6 w-full mdlg:w-4/12 flex justify-center order-first mdlg:order-last">
@@ -35,13 +36,13 @@ export default function Home() {
           {/* GitHub & LinkedIn Icons */}
           <div className="flex justify-center mdlg:justify-start items-center">
             <Link href="https://github.com/cam-peck" target="_blank">
-              <div className="mt-[2px] hover:bg-darkgray hover:bg-opacity-10 pr-3 py-1.5">
-                <Image src="/icons/github.png" alt="github-icon" width={90} height={50} />
+              <div className="mt-[3px] hover:bg-darkgray hover:bg-opacity-10 pr-3 pl-2 mdlg:pl-0 py-1.5">
+                <Image src="/icons/github.png" alt="github-icon" className="w-auto" width={90} height={50} />
               </div>
             </Link>
             <Link href="https://www.linkedin.com/in/cameronjpeck/" target="_blank">
               <div className="px-3 py-3 hover:bg-darkgray hover:bg-opacity-10">
-                <Image src="/icons/linkedin.png" alt="linkedin-icon" width={90} height={50} />
+                <Image src="/icons/linkedin.png" alt="linkedin-icon" className="w-auto object-cover" width={90} height={50} />
               </div>
             </Link>
           </div>
