@@ -4,7 +4,7 @@ import ProgressDots from '@/components/carousel/progress-dots';
 import projectData from '@/components/carousel/project-data';
 
 export default function Projects() {
-  const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(Math.floor(projectData.length / 2));
+  const [currentProjectIndex, setCurrentProjectIndex] = useState<number>(0);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
