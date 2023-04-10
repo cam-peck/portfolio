@@ -26,7 +26,14 @@ export default function ProjectCard({ currentProjectIndex, projectData, moveForw
 
         {/* Info */}
         <div className="max-w-[375px] rounded overflow-hidden shadow-lg bg-white">
-          <Image data-testid="card-title-image" src={imageUrl} alt={mainAltText} width={400} height={200} />
+          <Image
+            data-testid="card-title-image"
+            className="max-h-[195px] object-cover"
+            src={imageUrl}
+            alt={mainAltText}
+            width={400}
+            height={200}
+          />
           <div className="px-6 py-4 pb-8">
             <div className="font-bold text-[28px] mb-2">
               <p data-testid="card-title">{title}</p>
