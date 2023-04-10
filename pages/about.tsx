@@ -44,20 +44,16 @@ export default function About() {
         onMouseLeave={setMouseUp}
         id="about-me-dragbox"
       >
-        {aboutMe ? (
-          <Image
-            className="min-w-[1100px]"
-            src={aboutMe}
-            width={1600}
-            height={1600}
-            alt="about-me-image"
-            draggable={false}
-            priority
-            placeholder="empty"
-          />
-        ) : (
-          <LoadingSpinner />
-        )}
+        <Image
+          className="min-w-[1100px]"
+          src={aboutMe}
+          width={1600}
+          height={1600}
+          alt="about-me-image"
+          draggable={false}
+          priority
+          placeholder="blur"
+        />
       </div>
     </main>
   );
