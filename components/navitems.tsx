@@ -49,7 +49,7 @@ export default function NavItems(props: NavItemsProps) {
   };
 
   let currentNavState;
-  if (size.width === undefined) return;
+  if (size.width === undefined) return null;
   if (size.width >= 768) currentNavState = regularNav;
   if (size.width < 768) currentNavState = hamburgerIsOpen ? drawerNavActive : drawerNavInactive;
 
