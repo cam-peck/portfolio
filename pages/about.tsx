@@ -1,7 +1,6 @@
 import { useState, useRef } from 'react';
 import Image from 'next/image';
 import aboutMe from '../public/aboutMe.png';
-import LoadingSpinner from '@/components/loading-spinner';
 
 export default function About() {
   const [isDown, setIsDown] = useState<boolean>(false);
