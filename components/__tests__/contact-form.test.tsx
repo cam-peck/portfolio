@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import { server } from '../__mocks__/server';
 import 'whatwg-fetch';
 
-describe('Projects', () => {
+describe('Contact Form', () => {
   beforeEach(() => {
     server.listen();
     render(<ContactForm />);

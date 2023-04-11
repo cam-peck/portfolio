@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import SubmitResponse from '../submit-response';
 import '@testing-library/jest-dom';
 
-describe('Submit Response Component', () => {
+describe('Submit Response', () => {
   describe('Submit Success', () => {
     let onClick: (boolean: boolean) => void;
     beforeEach(() => {

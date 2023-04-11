@@ -34,7 +34,7 @@ describe('NavItems', () => {
     render(<NavItems hamburgerIsOpen={hamburgerIsOpen} setHamburgerIsOpen={setHamburgerIsOpen} />);
 
     const navItemsDiv = screen.getByTestId('nav-items');
-    expect(navItemsDiv).toHaveClass('absolute');
+    expect(navItemsDiv).toHaveClass('md:flex');
   });
 
   it('takes a prop "setHamburgerIsOpen"', () => {

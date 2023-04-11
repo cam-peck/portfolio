@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import Image from 'next/image';
+import aboutMe from '../public/aboutMe.png';
 
 export default function About() {
   const [isDown, setIsDown] = useState<boolean>(false);
@@ -42,7 +43,16 @@ export default function About() {
         onMouseLeave={setMouseUp}
         id="about-me-dragbox"
       >
-        <Image className="min-w-[1100px]" src="/about-me.png" width={1600} height={1600} alt="about-me-image" draggable={false} />
+        <Image
+          className="min-w-[1100px]"
+          src={aboutMe}
+          width={1600}
+          height={1600}
+          alt="about-me-image"
+          draggable={false}
+          priority
+          placeholder="blur"
+        />
       </div>
     </main>
   );

@@ -16,17 +16,24 @@ export default function ProjectCard({ currentProjectIndex, projectData, moveForw
     <section data-testid="project-card">
       <div className="flex flex-col lg:flex-row gap-8 justify-center items-center mb-12">
         {/* Backward Arrow */}
-        <div className="hidden lg:block ">
-          <i
-            data-testid="backward-arrow"
-            className="fa-solid fa-chevron-left text-[32px] hover:cursor-pointer hover:text-charcoal"
-            onClick={moveBackward}
-          />
+        <div
+          data-testid="backward-arrow"
+          className="hidden lg:block hover:bg-lightblue p-2 rounded-xl hover:cursor-pointer"
+          onClick={moveBackward}
+        >
+          <i className="fa-solid fa-chevron-left text-[32px] " />
         </div>
 
         {/* Info */}
         <div className="max-w-[375px] rounded overflow-hidden shadow-lg bg-white">
-          <Image data-testid="card-title-image" src={imageUrl} alt={mainAltText} width={400} height={200} />
+          <Image
+            data-testid="card-title-image"
+            className="max-h-[195px] object-cover"
+            src={imageUrl}
+            alt={mainAltText}
+            width={400}
+            height={200}
+          />
           <div className="px-6 py-4 pb-8">
             <div className="font-bold text-[28px] mb-2">
               <p data-testid="card-title">{title}</p>
@@ -50,17 +57,25 @@ export default function ProjectCard({ currentProjectIndex, projectData, moveForw
         </div>
 
         {/* Gif */}
-        <div>
-          <Image data-testid="card-gif-image" src={gifUrl} alt={gifAltText} width={800} height={400} priority />
+        <div className="">
+          <Image
+            data-testid="card-gif-image"
+            className="object-cover lg:min-h-[500px] lg:object-scale-down"
+            src={gifUrl}
+            alt={gifAltText}
+            width={800}
+            height={500}
+            priority
+          />
         </div>
 
         {/* Forward Arrow */}
-        <div className="hidden lg:block">
-          <i
-            data-testid="forward-arrow"
-            className="fa-solid fa-chevron-right text-[32px] hover:cursor-pointer hover:text-charcoal"
-            onClick={moveForward}
-          />
+        <div
+          data-testid="forward-arrow"
+          className="hidden lg:block hover:bg-lightblue p-2 rounded-xl hover:cursor-pointer"
+          onClick={moveForward}
+        >
+          <i className="fa-solid fa-chevron-right text-[32px]" />
         </div>
       </div>
     </section>

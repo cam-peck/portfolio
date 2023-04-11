@@ -1,13 +1,32 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Head from 'next/head';
+import profilePic from '../public/headshot.webp';
 
 export default function Home() {
   return (
-    <main className="max-w-6xl mx-auto px-6 pt-4 mdlg:pt-8">
+    <main className="max-w-6xl mx-auto px-6 pt-4 mdlg:pt-8 mb-8">
+      <Head>
+        <title>Cameron Peck | Full-Stack Developer</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="Cameron Peck: Portfolio Site" />
+        <meta property="og:description" content="A personal portfolio to display information about me and my projects." />
+        <meta property="og:image" content="https://portfolio-cam-peck.vercel.app/Open_Graph_Image.webp" />
+        <meta property="og:url" content="https://portfolio-cam-peck.vercel.app/" />
+      </Head>
+
       <div className="mdlg:flex mdlg:mt-28 justify-center">
         {/* Profile Image */}
         <div className="mt-6 w-full mdlg:w-4/12 flex justify-center order-first mdlg:order-last">
-          <Image className="rounded-[30%] mdlg:w-[300px]" src="/headshot.jpg" width={240} height={200} alt="profile-image" />
+          <Image
+            className="rounded-[30%] mdlg:w-[300px]"
+            src={profilePic}
+            width={240}
+            height={200}
+            alt="profile-image"
+            priority
+            placeholder="blur"
+          />
         </div>
 
         {/* Header & Sub-Header Text */}
@@ -26,13 +45,13 @@ export default function Home() {
           {/* GitHub & LinkedIn Icons */}
           <div className="flex justify-center mdlg:justify-start items-center">
             <Link href="https://github.com/cam-peck" target="_blank">
-              <div className="mt-[2px] hover:bg-darkgray hover:bg-opacity-10 pr-3 py-1.5">
-                <Image src="/icons/github.png" alt="github-icon" width={90} height={50} />
+              <div className="mt-[3px] hover:bg-darkgray hover:bg-opacity-10 pr-3 pl-2 mdlg:pl-0 py-1.5">
+                <Image src="/icons/github.png" alt="github-icon" className="w-auto" width={90} height={50} />
               </div>
             </Link>
             <Link href="https://www.linkedin.com/in/cameronjpeck/" target="_blank">
               <div className="px-3 py-3 hover:bg-darkgray hover:bg-opacity-10">
-                <Image src="/icons/linkedin.png" alt="linkedin-icon" width={90} height={50} />
+                <Image src="/icons/linkedin.png" alt="linkedin-icon" className="w-auto object-cover" width={90} height={50} />
               </div>
             </Link>
           </div>
@@ -47,7 +66,7 @@ export default function Home() {
         <div className="pt-2 flex justify-center mdlg:justify-start mb-6">
           <hr className="mdlg:hidden text-charcoal w-[112px] border-[1.5px] mdlg:max-w-full" />
         </div>
-        <div className="grid grid-cols-3 sm:grid-cols-4 grid-rows-2 techstack:flex gap-10 justify-center items-center max-w-[300px] sm:max-w-[400px] techstack:max-w-full mx-auto mdlg:mx-12 techstack:mx-12">
+        <div className="grid grid-cols-3 grid-rows-3 mdlg:grid-cols-5 mdlg:grid-rows-2 techstack:flex gap-10 justify-center items-center max-w-[300px] sm:max-w-[400px] techstack:max-w-full mx-auto mdlg:mx-12 techstack:mx-12">
           <div className="flex justify-center">
             <Image src="/icons/react.png" alt="react-icon" width={50} height={50} />
           </div>
@@ -55,7 +74,7 @@ export default function Home() {
             <Image src="/icons/next.png" alt="nextjs-icon" width={50} height={50} />
           </div>
           <div className="flex justify-center">
-            <Image src="/icons/node.png" alt="node-icon" width={50} height={50} />
+            <Image src="/icons/node.png" alt="node-icon" className="w-auto" width={50} height={50} />
           </div>
           <div className="flex justify-center">
             <Image src="/icons/aws.webp" alt="aws-icon" width={50} height={50} />
@@ -71,6 +90,9 @@ export default function Home() {
           </div>
           <div className="flex justify-center">
             <Image src="/icons/rtl.png" alt="rtl-icon" width={50} height={50} />
+          </div>
+          <div className="flex justify-center">
+            <Image src="/icons/cypress.png" alt="cypress-icon" width={50} height={50} />
           </div>
         </div>
       </div>

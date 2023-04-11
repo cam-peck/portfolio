@@ -11,23 +11,26 @@ describe('Projects Page', () => {
 
   describe('Arrow Tests', () => {
     it('The carousel advances when the user clicks the forward arrow', () => {
-      cy.get('[data-testid=dot-2]').should('have.class', 'fa-solid');
+      cy.get('[data-testid=dot-0]').should('have.class', 'fa-solid');
       cy.get('[data-testid=forward-arrow]').click();
-      cy.get('[data-testid=dot-2]').should('have.class', 'fa-regular');
-      cy.get('[data-testid=dot-3]').should('have.class', 'fa-solid');
-      cy.get('[data-testid=card-github-link]').should('have.attr', 'href', projectData[3].github);
-    });
-
-    it('The carousel advances when the user clicks the backward arrow', () => {
-      cy.get('[data-testid=dot-2]').should('have.class', 'fa-solid');
-      cy.get('[data-testid=backward-arrow]').click();
-      cy.get('[data-testid=dot-2]').should('have.class', 'fa-regular');
+      cy.get('[data-testid=dot-0]').should('have.class', 'fa-regular');
       cy.get('[data-testid=dot-1]').should('have.class', 'fa-solid');
       cy.get('[data-testid=card-github-link]').should('have.attr', 'href', projectData[1].github);
     });
 
+    it('The carousel advances when the user clicks the backward arrow', () => {
+      cy.get('[data-testid=forward-arrow]').click();
+      cy.get('[data-testid=dot-1]').should('have.class', 'fa-solid');
+      cy.get('[data-testid=backward-arrow]').click();
+      cy.get('[data-testid=dot-1]').should('have.class', 'fa-regular');
+      cy.get('[data-testid=dot-0]').should('have.class', 'fa-solid');
+      cy.get('[data-testid=card-github-link]').should('have.attr', 'href', projectData[0].github);
+    });
+
     it("Doesn't break when the carousel is at the beginning or the end", () => {
       // get to the final dot
+      cy.get('[data-testid=forward-arrow]').click();
+      cy.get('[data-testid=forward-arrow]').click();
       cy.get('[data-testid=forward-arrow]').click();
       cy.get('[data-testid=forward-arrow]').click();
       cy.get('[data-testid=dot-4]').should('have.class', 'fa-solid');
