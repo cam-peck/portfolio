@@ -47,8 +47,15 @@ export default function ContactForm() {
   return (
     <section className="mb-8">
       <form onSubmit={(event) => handleSubmit(event)} className="flex flex-col gap-8 bg-charcoal p-8 rounded-xl text-lg h-[560px]">
-        <TextInput labelText="Name:" name="name" value={name} onChange={setName} placeholder="Rand al'Thor" />
-        <TextInput labelText="Email:" name="email" value={email} onChange={setEmail} placeholder="therealdragon@wheeloftime.net" />
+        <TextInput labelText="Name:" name="name" type="text" value={name} onChange={setName} placeholder="Rand al'Thor" />
+        <TextInput
+          labelText="Email:"
+          name="email"
+          type="email"
+          value={email}
+          onChange={setEmail}
+          placeholder="therealdragon@wheeloftime.net"
+        />
         <TextareaInput
           labelText="Message:"
           name="message"

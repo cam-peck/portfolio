@@ -3,12 +3,13 @@ import React from 'react';
 interface TextInput {
   labelText: string;
   name: string;
+  type: string;
   placeholder: string;
   value: string;
   onChange: (newValue: string) => void;
 }
 
-export default function TextInput({ labelText, name, placeholder, value, onChange }: TextInput) {
+export default function TextInput({ labelText, name, type, placeholder, value, onChange }: TextInput) {
   const style = {
     outline: 'transparent',
   };
@@ -24,7 +25,7 @@ export default function TextInput({ labelText, name, placeholder, value, onChang
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
-        type="text"
+        type={type}
         required
       />
     </div>
